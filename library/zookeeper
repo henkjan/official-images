@@ -3,10 +3,10 @@ GitRepo: https://github.com/31z4/zookeeper-docker.git
 
 Tags: 3.4.14, 3.4
 Architectures: amd64
-GitCommit: c978f835bc33509324b51cb210c8c5c9934c38ff
+GitCommit: 1ed5af662e6749021687fbf2a9b445b1adf2fb46
 Directory: 3.4.14
 
-Tags: 3.5.5, 3.5, latest
+Tags: 3.5.6, 3.5, latest
 Architectures: amd64
-GitCommit: c978f835bc33509324b51cb210c8c5c9934c38ff
-Directory: 3.5.5
+GitCommit: 1ed5af662e6749021687fbf2a9b445b1adf2fb46
+Directory: 3.5.6

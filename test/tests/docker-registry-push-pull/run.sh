@@ -37,6 +37,7 @@ dcid="$(
 		--privileged \
 		--link "$rcid":"$rhostname" \
 		--name "$dcname" \
+		-e DOCKER_TLS_CERTDIR=/certs -v /certs \
 		"$dockerImage" \
 		--insecure-registry "$rnamespace"
 )"
@@ -45,12 +46,13 @@ trap "docker rm -vf $rcid $dcid > /dev/null" EXIT
 docker_() {
 	docker run --rm -i \
 		--link "$dcid":docker \
+		-e DOCKER_TLS_CERTDIR=/certs --volumes-from "$dcid:ro" \
 		--entrypoint docker-entrypoint.sh \
 		"$dockerImage" \
 		"$@"
 }
 
-. "$dir/../../retry.sh" 'docker_ version'
+. "$dir/../../retry.sh" --tries 30 'docker_ version'
 
 [ "$(docker_ images -q | wc -l)" = '0' ]
 docker_ pull busybox

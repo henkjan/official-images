@@ -3,12 +3,14 @@ Maintainers: Amazon Corretto Team (@corretto),
              Ziyi Luo (@ziyiluo),
              David Alvarez (@alvdavi)
 
-Tags: 8, 8u212, 8-al2-full, latest
+Tags: 8, 8u242, 8-al2-full, latest
 GitRepo: https://github.com/corretto/corretto-8-docker.git
 GitFetch: refs/heads/8-al2-full
-GitCommit: 055b9f36817325fbf5d2469150684ad8a4f4f1e4
+GitCommit: ae31a3e5106d3d16e0a3154bca567c10879522af
+Architectures: amd64, arm64v8
 
-Tags: 11, 11.0.3, 11-al2-full
+Tags: 11, 11.0.6, 11-al2-full
 GitRepo: https://github.com/corretto/corretto-11-docker.git
 GitFetch: refs/heads/11-al2-full
-GitCommit: 0b311f7144b833e789165173a83a2022987dfb7b
+GitCommit: a797c24219a9262e581ee70fc928c57acacde331
+Architectures: amd64, arm64v8

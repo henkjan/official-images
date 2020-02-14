@@ -3,15 +3,24 @@ GitRepo: https://github.com/CentOS/sig-cloud-instance-images.git
 Directory: docker
 Constraints: !aufs
 
-Tags: latest, centos7, 7
+Tags: latest, centos8, 8, centos8.1.1911, 8.1.1911
+GitFetch: refs/heads/CentOS-8.1.1911-x86_64
+GitCommit: 52cc14a6dd2efc45265417a4690964d32cf13857
+arm64v8-GitFetch: refs/heads/CentOS-8.1.1911-aarch64
+arm64v8-GitCommit: 3e16a554bf8616acf0f64a952c38d345a6d1c331
+ppc64le-GitFetch: refs/heads/CentOS-8.1.1911-ppc64le
+ppc64le-GitCommit: 89eba33f3e442dc42808ef76194e2c91d09f3050
+Architectures: amd64, arm64v8, ppc64le
+
+Tags: centos7, 7
 GitFetch: refs/heads/CentOS-7-x86_64
-GitCommit: 9a389e11460bd809bb83c5fd4f095dbc8398d8cc
+GitCommit: d9560a37644faaeac50162582f82a5ee920dc37e
 arm32v7-GitFetch: refs/heads/CentOS-7armhfp
 arm32v7-GitCommit: 8022ae6d18ddf031b1b3a80549eeb46d1deb6dcd
 arm64v8-GitFetch: refs/heads/CentOS-7-aarch64
-arm64v8-GitCommit: ccc35e05e7a1b7bd2b4a4ed6be7910b969b8c1e7
+arm64v8-GitCommit: 5828bda61bc9685a6282b322d5563d5cb509a002
 ppc64le-GitFetch: refs/heads/CentOS-7-ppc64le
-ppc64le-GitCommit: 52ccf50bc484922ddf51544761180600ea1fb486
+ppc64le-GitCommit: 624a803079cdfa81d40f39e75690f27a07b8ac36
 i386-GitFetch: refs/heads/CentOS-7i386
 i386-GitCommit: 544a072ae2bb6eb378cf3ba587b24127629e9505
 Architectures: amd64, arm64v8, arm32v7, ppc64le, i386
@@ -22,6 +31,11 @@ GitCommit: 23b05f6a35520ebf338e4df918e4952830da068b
 i386-GitFetch: refs/heads/CentOS-6i386
 i386-GitCommit: 53cd22704a89c6ed59d43e2e70e63316026af4f7
 Architectures: amd64, i386
+
+Tags: centos7.7.1908, 7.7.1908
+GitFetch: refs/heads/CentOS-7.7.1908-x86_64
+GitCommit: dcf7932cbda6dd9865d50bfe969927e3e1f0c671
+Architectures: amd64
 
 Tags: centos7.6.1810, 7.6.1810
 GitFetch: refs/heads/CentOS-7.6.1810

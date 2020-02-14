@@ -1,25 +1,35 @@
-# this file is generated via https://github.com/docker-library/ghost/blob/b153b80c4e9ce17834f6b90e50c25a48a0c515e5/generate-stackbrew-library.sh
+# this file is generated via https://github.com/docker-library/ghost/blob/0779a673aaa5c23e104247292105f13448a49517/generate-stackbrew-library.sh
 
 Maintainers: Tianon Gravi <admwiggin@gmail.com> (@tianon),
              Joseph Ferguson <yosifkit@gmail.com> (@yosifkit)
 GitRepo: https://github.com/docker-library/ghost.git
 
-Tags: 2.25.4, 2.25, 2, latest
+Tags: 3.5.2, 3.5, 3, latest
 Architectures: amd64, arm32v7, arm64v8, ppc64le, s390x
-GitCommit: 6d485f5797c96fae0aef795a38999453d5aa665d
+GitCommit: 4681460fb73e0c11d43200b35c57c8a15dbc047f
+Directory: 3/debian
+
+Tags: 3.5.2-alpine, 3.5-alpine, 3-alpine, alpine
+Architectures: amd64, arm32v6, arm32v7, arm64v8, i386, ppc64le, s390x
+GitCommit: 4681460fb73e0c11d43200b35c57c8a15dbc047f
+Directory: 3/alpine
+
+Tags: 2.38.0, 2.38, 2
+Architectures: amd64, arm32v7, arm64v8, ppc64le, s390x
+GitCommit: aeed5c9122e22c71f321c36f11f8794b3915dce5
 Directory: 2/debian
 
-Tags: 2.25.4-alpine, 2.25-alpine, 2-alpine, alpine
-Architectures: amd64, arm32v6, arm64v8, i386, ppc64le, s390x
-GitCommit: 1d4d1317bf6276b9b9f950bb0f5354504b2b9977
+Tags: 2.38.0-alpine, 2.38-alpine, 2-alpine
+Architectures: amd64, arm32v6, arm32v7, arm64v8, i386, ppc64le, s390x
+GitCommit: aeed5c9122e22c71f321c36f11f8794b3915dce5
 Directory: 2/alpine
 
-Tags: 1.26.0, 1.26, 1
-Architectures: amd64, arm32v7, arm64v8, i386, ppc64le, s390x
-GitCommit: 6d485f5797c96fae0aef795a38999453d5aa665d
+Tags: 1.26.2, 1.26, 1
+Architectures: amd64, arm32v7, arm64v8, ppc64le, s390x
+GitCommit: aeed5c9122e22c71f321c36f11f8794b3915dce5
 Directory: 1/debian
 
-Tags: 1.26.0-alpine, 1.26-alpine, 1-alpine
-Architectures: amd64, arm32v6, arm64v8, i386, ppc64le, s390x
-GitCommit: 8eba604d6b6078a318e0a83771ebc8e09f350bf0
+Tags: 1.26.2-alpine, 1.26-alpine, 1-alpine
+Architectures: amd64, arm32v6, arm32v7, arm64v8, i386, ppc64le, s390x
+GitCommit: aeed5c9122e22c71f321c36f11f8794b3915dce5
 Directory: 1/alpine

@@ -1,30 +1,29 @@
 Maintainers: Amazon Linux <amazon-linux@amazon.com> (@amazonlinux),
              iliana destroyer of worlds (@iliana),
-             Praveen K Paladugu (@praveen-pk),
              Eric Warehime (@Eric-Warehime)
 GitRepo: https://github.com/amazonlinux/container-images.git
-GitCommit: 498790a8ffa100b16f25b9724127a62dfde7e17c
+GitCommit: 6ab69daed0190d3b76a7462930901796f36df56b
 
-Tags: 2.0.20190508, 2, latest
+Tags: 2.0.20191217.0, 2, latest
 Architectures: amd64, arm64v8
 amd64-GitFetch: refs/heads/amzn2
-amd64-GitCommit: c28dadcba0a27c8ba762bb6c54aed1b956f4e872
+amd64-GitCommit: 93b9c7974ab6ddd65abace3bf68c20005e5ee82a
 arm64v8-GitFetch: refs/heads/amzn2-arm64
-arm64v8-GitCommit: 8a1c3bdf2f840b607fda3a3835f1f0b3a37ee04a
+arm64v8-GitCommit: fe2be2d4e58c9367980192cd0fb54985227a8ed2
 
-Tags: 2.0.20190508-with-sources, 2-with-sources, with-sources
+Tags: 2.0.20191217.0-with-sources, 2-with-sources, with-sources
 Architectures: amd64, arm64v8
 amd64-GitFetch: refs/heads/amzn2-with-sources
-amd64-GitCommit: eeffe33a00f82e8cf132b4834b4d10a2d88ecd70
+amd64-GitCommit: 7f7aefac6e2d3782f75f4a70a12bce904dfee052
 arm64v8-GitFetch: refs/heads/amzn2-arm64-with-sources
-arm64v8-GitCommit: a8689e99a0f8053dcd6ceb6860dc4c81d5bd9e0b
+arm64v8-GitCommit: 48ab5fa63e2db743805d4f709cb246eb0306dea4
 
-Tags: 2018.03.0.20190514, 2018.03, 1
+Tags: 2018.03.0.20191219.0, 2018.03, 1
 Architectures: amd64
 amd64-GitFetch: refs/heads/2018.03
-amd64-GitCommit: 4be6353f5012d044b6d7c447aa8c6feee0728542
+amd64-GitCommit: c7ef2721d68a23b9614060c5ebbbef50f03a05d7
 
-Tags: 2018.03.0.20190514-with-sources, 2018.03-with-sources, 1-with-sources
+Tags: 2018.03.0.20191219.0-with-sources, 2018.03-with-sources, 1-with-sources
 Architectures: amd64
 amd64-GitFetch: refs/heads/2018.03-with-sources
-amd64-GitCommit: 44f09a2ec31b76fc01ba5cdc18d136e5b5e02782
+amd64-GitCommit: 6e2066b126bad9aa494f00b4a4f62985d30a967e

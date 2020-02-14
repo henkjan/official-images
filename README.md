@@ -58,13 +58,13 @@ The name of this program was chosen in an attempt to reflect that upstream-first
 Some images have been ported for other architectures, and many of these are officially supported (to various degrees).
 
 -	Architectures officially supported by Docker, Inc. for running Docker: (see [download.docker.com](https://download.docker.com/linux/))
+	-	ARMv6 32-bit (`arm32v6`): https://hub.docker.com/u/arm32v6/
 	-	ARMv7 32-bit (`arm32v7`): https://hub.docker.com/u/arm32v7/
 	-	ARMv8 64-bit (`arm64v8`): https://hub.docker.com/u/arm64v8/
 	-	Linux x86-64 (`amd64`): https://hub.docker.com/u/amd64/
 	-	Windows x86-64 (`windows-amd64`): https://hub.docker.com/u/winamd64/
 -	Other architectures built by official images: (but *not* officially supported by Docker, Inc.)
 	-	ARMv5 32-bit (`arm32v5`): https://hub.docker.com/u/arm32v5/
-	-	ARMv6 32-bit (`arm32v6`): https://hub.docker.com/u/arm32v6/
 	-	IBM POWER8 (`ppc64le`): https://hub.docker.com/u/ppc64le/
 	-	IBM z Systems (`s390x`): https://hub.docker.com/u/s390x/
 	-	x86/i686 (`i386`): https://hub.docker.com/u/i386/
@@ -245,20 +245,12 @@ The `Dockerfile` should be written to help mitigate man-in-the-middle attacks du
 	    # install
 	```
 
--	**Best**: *full key fingerprint imported to apt-key which will check signatures when packages are downloaded and installed.*
+	-	**Note:** the use of either SHA1 or MD5 should be considered a "checksum of last resort" as both are considered generally unsafe:
 
-	```Dockerfile
-	RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 492EAFE8CD016A07919F1D2B9ECBEC467F0CEB10
-	RUN echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/$MONGO_MAJOR main" > /etc/apt/sources.list.d/mongodb-org.list
-	RUN apt-get update \
-	    && apt-get install -y mongodb-org=$MONGO_VERSION \
-	    && rm -rf /var/lib/apt/lists/* \
-	    # ...
-	```
+		-	["Single-block collision for MD5" from 2012](https://marc-stevens.nl/research/md5-1block-collision/)
+		-	["Announcing the first SHA1 collision" from 2017](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html)
 
-	(As a side note, `rm -rf /var/lib/apt/lists/*` is *roughly* the opposite of `apt-get update` -- it ensures that the layer doesn't include the extra ~8MB of APT package list data, and enforces [appropriate `apt-get update` usage](https://docs.docker.com/engine/articles/dockerfile_best-practices/#apt-get).)
-
--	**Alternate Best**: *full key fingerprint import, download over https, verify PGP signature of download.*
+-	**Best**: *full key fingerprint import, download over https, verify PGP signature of download.*
 
 	```Dockerfile
 	# gpg: key F73C700D: public key "Larry Hastings <larry@hastings.org>" imported
@@ -270,6 +262,29 @@ The `Dockerfile` should be written to help mitigate man-in-the-middle attacks du
 	    && rm -r "$GNUPGHOME" python.tar.xz.asc \
 	    # install
 	```
+
+-	**Alternate Best**: *full key fingerprint imported to apt which will check signatures when packages are downloaded and installed.*
+
+	```Dockerfile
+	RUN set -ex; \
+	    key='A4A9406876FCBD3C456770C88C718D3B5072E1F5'; \
+	    export GNUPGHOME="$(mktemp -d)"; \
+	    gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
+	    gpg --batch --armor --export "$key" > /etc/apt/trusted.gpg.d/mysql.gpg.asc; \
+	    gpgconf --kill all; \
+	    rm -rf "$GNUPGHOME"; \
+	    apt-key list > /dev/null
+
+	RUN echo "deb http://repo.mysql.com/apt/debian/ stretch mysql-${MYSQL_MAJOR}" > /etc/apt/sources.list.d/mysql.list
+	
+	RUN apt-get update \
+	    && apt-get install -y mysql-community-client="${MYSQL_VERSION}" mysql-community-server-core="${MYSQL_VERSION}" \
+	    && rm -rf /var/lib/apt/lists/* \
+	    # ...
+
+	```
+
+	(As a side note, `rm -rf /var/lib/apt/lists/*` is *roughly* the opposite of `apt-get update` -- it ensures that the layer doesn't include the extra ~8MB of APT package list data, and enforces [appropriate `apt-get update` usage](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get).)
 
 ##### Runtime Configuration
 
@@ -301,7 +316,7 @@ Each repo can specify multiple architectures for any and all tags. If no archite
 
 The `Architectures` of any given tag must be a strict subset of the `Architectures` of the tag it is `FROM`.
 
-We strongly recommend that most images create a single `Dockerfile` per entry in the library file that can be used for multiple architectures. This means that each supported architecture will have the same `FROM` line (e.g. `FROM debian:jessie`). While official images are in the process of completing [image indexes](https://github.com/opencontainers/image-spec/blob/v1.0.0-rc6/image-index.md) to make this work naturally, the servers that build for non-amd64 architectures will pull the correct architecture-specific base and `docker tag` the base image to make the `FROM` work correctly. See [`golang`](https://github.com/docker-library/official-images/blob/master/library/golang), [`docker`](https://github.com/docker-library/official-images/blob/master/library/docker), [`haproxy`](https://github.com/docker-library/official-images/blob/master/library/haproxy), and [`php`](https://github.com/docker-library/official-images/blob/master/library/php) for examples of library files using one `Dockerfile` per entry and see their respective git repos for example `Dockerfile`s.
+We strongly recommend that most images create a single `Dockerfile` per entry in the library file that can be used for multiple architectures. This means that each supported architecture will have the same `FROM` line (e.g. `FROM debian:jessie`). See [`golang`](https://github.com/docker-library/official-images/blob/master/library/golang), [`docker`](https://github.com/docker-library/official-images/blob/master/library/docker), [`haproxy`](https://github.com/docker-library/official-images/blob/master/library/haproxy), and [`php`](https://github.com/docker-library/official-images/blob/master/library/php) for examples of library files using one `Dockerfile` per entry and see their respective git repos for example `Dockerfile`s.
 
 For images that are `FROM scratch` like `debian` it will be necessary to have a different `Dockerfile` and build context in order to `ADD` architecture specific binaries. Since these images use the same `Tags`, they need to be in the same entry. Use the architecture specific fields for `GitRepo`, `GitFetch`, `GitCommit`, and `Directory`, which are the architecture concatenated with hyphen (`-`) and the field (e.g. `arm32v7-GitCommit`). Any architecture that does not have an architecture-specific field will use the default field (e.g. no `arm32v7-Directory` means `Directory` will be used for `arm32v7`). See the [`debian`](https://github.com/docker-library/official-images/blob/master/library/debian) or [`ubuntu`](https://github.com/docker-library/official-images/blob/master/library/ubuntu) files in the library for examples. The following is an example for [`hello-world`](https://github.com/docker-library/official-images/blob/master/library/hello-world):
 
@@ -373,25 +388,19 @@ The first entry is the "global" metadata for the image. The only required field 
 	# this is a comment and will be ignored
 	Maintainers: John Smith <jsmith@example.com> (@example-jsmith),
 	             Anne Smith <asmith@example.com> (@example-asmith)
-	GitRepo: https://github.com/docker-library/wordpress.git
+	GitRepo: https://github.com/example/docker-example.git
+	GitCommit: deadbeefdeadbeefdeadbeefdeadbeefdeadbeef
 	
 	# this is also a comment, and will also be ignored
 	
-	Tags: 4.1.1, 4.1, 4, latest
-	GitCommit: bbef6075afa043cbfe791b8de185105065c02c01
+	Tags: 1.2.3, 1.2, 1, latest
+	Directory: 1
 	
-	Tags: 2.6.17, 2.6
-	GitRepo: https://github.com/docker-library/redis.git
-	GitCommit: 062335e0a8d20cab2041f25dfff2fbaf58544471
-	Directory: 2.6
-	
-	Tags: 13.2, harlequin
-	GitRepo: https://github.com/openSUSE/docker-containers-build.git
-	GitFetch: refs/heads/openSUSE-13.1
-	GitCommit: 0d21bc58cd26da2a0a59588affc506b977d6a846
-	Directory: docker
-	Constraints: !aufs
-	Maintainers: Bob Smith (@example-bsmith)
+	Tags: 2.0-rc1, 2.0-rc, 2-rc, rc
+	GitRepo: https://github.com/example/docker-example-rc.git
+	GitFetch: refs/heads/2.0-pre-release
+	GitCommit: beefdeadbeefdeadbeefdeadbeefdeadbeefdead
+	Directory: 2
 
 Bashbrew will fetch code out of the Git repository (`GitRepo`) at the commit specified (`GitCommit`). If the commit referenced is not available by fetching `master` of the associated `GitRepo`, it becomes necessary to supply a value for `GitFetch` in order to tell Bashbrew what ref to fetch in order to get the commit necessary.
 

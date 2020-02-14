@@ -122,6 +122,11 @@ imageTests+=(
 	[mongo]='
 		mongo-basics
 		mongo-auth-basics
+		mongo-tls-basics
+		mongo-tls-auth
+	'
+	[mongo-express]='
+		mongo-express-run
 	'
 	[mono]='
 	'
@@ -177,6 +182,8 @@ imageTests+=(
 	[plone]='
 		plone-basics
 		plone-addons
+		plone-cors
+		plone-versions
 		plone-zeoclient
 	'
 	[postgres]='
@@ -204,6 +211,7 @@ imageTests+=(
 	'
 	[redis]='
 		redis-basics
+		redis-basics-tls
 		redis-basics-config
 		redis-basics-persistent
 	'
@@ -221,6 +229,7 @@ imageTests+=(
 		ruby-gems
 		ruby-bundler
 		ruby-nonroot
+		ruby-binstubs
 	'
 	[rust]='
 		rust-hello-world
@@ -286,4 +295,8 @@ globalExcludeTests+=(
 	[ruby:slim_ruby-gems]=1
 	[percona:psmdb_percona-tokudb]=1
 	[percona:psmdb_percona-rocksdb]=1
+
+	# the Swift slim images are not expected to be able to run the swift-hello-world test because it involves compiling Swift code. The slim images are for running an already built binary.
+	# https://github.com/docker-library/official-images/pull/6302#issuecomment-512181863
+	[swift:slim_swift-hello-world]=1
 )

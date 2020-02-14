@@ -1,35 +1,25 @@
-# this file is generated via https://github.com/docker-library/docker/blob/6001c15038b05149a83dcc17e1bbeedc92979f6d/generate-stackbrew-library.sh
+# this file is generated via https://github.com/docker-library/docker/blob/34acb095295d0cd1e3cb6a4098c9a71069a6362e/generate-stackbrew-library.sh
 
 Maintainers: Tianon Gravi <tianon@dockerproject.org> (@tianon),
              Joseph Ferguson <yosifkit@gmail.com> (@yosifkit)
 GitRepo: https://github.com/docker-library/docker.git
 
-Tags: 19.03.0-rc3, 19.03-rc, rc, test
+Tags: 19.03.6, 19.03, 19, stable, test, latest
 Architectures: amd64, arm32v6, arm32v7, arm64v8
-GitCommit: cdcff675cecbae122cbae49ed6e17fa78bb6116a
-Directory: 19.03-rc
+GitCommit: 3dc42d46491d14b9b87f553bd46a45954ecec8ea
+Directory: 19.03
 
-Tags: 19.03.0-rc3-dind, 19.03-rc-dind, rc-dind, test-dind
+Tags: 19.03.6-dind, 19.03-dind, 19-dind, stable-dind, test-dind, dind
 Architectures: amd64, arm32v6, arm32v7, arm64v8
-GitCommit: 27471a8b93e980bd4c51464ee933ed90fd36bf97
-Directory: 19.03-rc/dind
+GitCommit: 4d5e4e2fcd2c5279a747e9ac221fb2442da53dec
+Directory: 19.03/dind
 
-Tags: 19.03.0-rc3-git, 19.03-rc-git, rc-git, test-git
-Architectures: amd64, arm32v6, arm32v7, arm64v8
-GitCommit: 98ffef81ebfa7601a9ed2f0bf56d78f426bf253c
-Directory: 19.03-rc/git
+Tags: 19.03.6-dind-rootless, 19.03-dind-rootless, 19-dind-rootless, stable-dind-rootless, test-dind-rootless, dind-rootless
+Architectures: amd64
+GitCommit: cd0099524944dd1ad368421ec042e0ec9ef53a47
+Directory: 19.03/dind-rootless
 
-Tags: 18.09.7, 18.09, 18, stable, latest
+Tags: 19.03.6-git, 19.03-git, 19-git, stable-git, test-git, git
 Architectures: amd64, arm32v6, arm32v7, arm64v8
-GitCommit: cbb0ee05d8be7b73d6b482c4a602be137e108f77
-Directory: 18.09
-
-Tags: 18.09.7-dind, 18.09-dind, 18-dind, stable-dind, dind
-Architectures: amd64, arm32v6, arm32v7, arm64v8
-GitCommit: 27471a8b93e980bd4c51464ee933ed90fd36bf97
-Directory: 18.09/dind
-
-Tags: 18.09.7-git, 18.09-git, 18-git, stable-git, git
-Architectures: amd64, arm32v6, arm32v7, arm64v8
-GitCommit: 91bbc4f7b06c06020d811dafb2266bcd7cf6c06d
-Directory: 18.09/git
+GitCommit: 7a67842e7ff12c1426ae6a67ac1b7a701b51f3df
+Directory: 19.03/git

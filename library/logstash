@@ -4,10 +4,10 @@ Maintainers: Tianon Gravi <admwiggin@gmail.com> (@tianon),
              Joseph Ferguson <yosifkit@gmail.com> (@yosifkit)
 GitRepo: https://github.com/docker-library/logstash.git
 
-Tags: 7.2.0
-GitCommit: 26c49635928bdded0c1bc64df411dbdeb610c3ac
+Tags: 7.6.0
+GitCommit: 52b9ddbb9258a932b37c3152fc9dc74c57274429
 Directory: 7
 
-Tags: 6.8.1
-GitCommit: a3e35795ecb2890e27611b092f8930c26b8d70c9
+Tags: 6.8.6
+GitCommit: befe697aacab90fc508ae0db4e292dae66a1820c
 Directory: 6

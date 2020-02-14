@@ -1,8 +1,20 @@
 Maintainers: Janos Gyerik <janos.gyerik@sonarsource.com> (@janos-ss),
              Julien Lancelot <julien.lancelot@sonarsource.com> (@julienlancelot),
-             Christophe Levis <christophe.levis@sonarsource.com> (@christophelevis)
+             Christophe Levis <christophe.levis@sonarsource.com> (@christophelevis),
+             Pierre Guillot <pierre.guillot@sonarsource.com> (@pierre-guillot-sonarsource),
+             Michal Duda <michal.duda@sonarsource.com> (@michal-duda-sonarsource)
 GitRepo: https://github.com/SonarSource/docker-sonarqube.git
-GitCommit: 7f8fd12c45f4c7801e08d6b938c3869e0ceebd96
+GitFetch: refs/heads/branch-8.1
+GitCommit: 8fb14312c4780e6aca7d95d3fcc5ae3022cb7276
 
-Tags: 7.9-community, latest, lts
-Directory: 7.9-community
+Tags: 7.9.2-community, 7.9-community, latest, lts
+Directory: 7/community
+
+Tags: 8.1-community-beta, 8-community-beta, community-beta
+Directory: 8/community
+
+Tags: 8.1-developer-beta, 8-developer-beta, developer-beta
+Directory: 8/developer
+
+Tags: 8.1-enterprise-beta, 8-enterprise-beta, enterprise-beta
+Directory: 8/enterprise

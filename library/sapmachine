@@ -1,12 +1,12 @@
 Maintainers: Rene Schuenemann <sapmachine@sap.com> (@reshnm)
 GitRepo: https://github.com/SAP/SapMachine-infrastructure.git
 
-Tags: 11, 11.0.3, lts
+Tags: 11, 11.0.6, lts
 Architectures: amd64
-GitCommit: 89924265b4359478b58a29207f0dfe7323b18784
+GitCommit: 2c8a65f330ca09a10aea3581626218fd748f9401
 Directory: dockerfiles/official/lts
 
-Tags: 12, 12.0.1, latest
+Tags: 13, 13.0.2, latest
 Architectures: amd64
-GitCommit: 89924265b4359478b58a29207f0dfe7323b18784
+GitCommit: c1f267171fbf6dc4520b7e14e4e5c421ddfffb81
 Directory: dockerfiles/official/stable

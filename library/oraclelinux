@@ -4,15 +4,27 @@ GitCommit: 01a15ec99c7470a3391c691509db1759b41eaf66
 GitFetch: refs/heads/master
 # https://github.com/oracle/container-images/tree/dist-amd64
 amd64-GitFetch: refs/heads/dist-amd64
-amd64-GitCommit: 5f779fc53c7d42f7870a42c9cc188514bb081fc7
+amd64-GitCommit: e1e3e2560fcfca32d0ac46bd01a4f9dcfcec8a9e
 # https://github.com/oracle/container-images/tree/dist-arm64v8
 arm64v8-GitFetch: refs/heads/dist-arm64v8
-arm64v8-GitCommit: 3dccca2ddb59dcb12fea65b965d702089f533f21
+arm64v8-GitCommit: 448fa98ef8f70f9d5a1c00b630d274f0a20cb8ec
 Constraints: !aufs
 
-Tags: 7.6, 7, latest
+Tags: 8.1, 8
 Architectures: amd64, arm64v8
-Directory: 7.6
+Directory: 8.1
+
+Tags: 8.0
+Architectures: amd64, arm64v8
+Directory: 8.0
+
+Tags: 8-slim
+Architectures: amd64, arm64v8
+Directory: 8-slim
+
+Tags: 7.7, 7, latest
+Architectures: amd64, arm64v8
+Directory: 7.7
 
 Tags: 7-slim
 Architectures: amd64, arm64v8

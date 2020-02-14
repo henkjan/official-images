@@ -4,10 +4,10 @@ Maintainers: Tianon Gravi <admwiggin@gmail.com> (@tianon),
              Joseph Ferguson <yosifkit@gmail.com> (@yosifkit)
 GitRepo: https://github.com/docker-library/elasticsearch.git
 
-Tags: 7.2.0
-GitCommit: 0f90651d2bb17829fc69a497888ad7eac89b3edc
+Tags: 7.6.0
+GitCommit: 3ee0cc9aaf25ebb7fba9e9e1c8f4f94b77f85366
 Directory: 7
 
-Tags: 6.8.1
-GitCommit: c9aa8eecee3217d3f0497e29c57b8d822a5eea76
+Tags: 6.8.6
+GitCommit: 4c04ee848e9183d70c6109e9325d6a40520d334d
 Directory: 6

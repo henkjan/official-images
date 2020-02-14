@@ -1,17 +1,6 @@
-Maintainers: Adam Miller <maxamillion@fedoraproject.org> (@maxamillion),
-             Patrick Uiterwijk <puiterwijk@gmail.com> (@puiterwijk),
-             Clement Verna <cverna@fedoraproject.org> (@cverna)
+Maintainers: Clement Verna <cverna@fedoraproject.org> (@cverna)
 GitRepo: https://github.com/fedora-cloud/docker-brew-fedora.git
 Constraints: !aufs
-
-Tags: 27
-Architectures: amd64, arm32v7, arm64v8, ppc64le
-GitFetch: refs/heads/27
-GitCommit: e1796b2753d5a5731de5915661e4639c4342b950
-amd64-Directory: x86_64/
-arm32v7-Directory: armhfp/
-arm64v8-Directory: aarch64/
-ppc64le-Directory: ppc64le/
 
 Tags: 26
 Architectures: amd64, arm32v7, arm64v8, ppc64le
@@ -22,14 +11,14 @@ arm32v7-Directory: armhfp/
 arm64v8-Directory: aarch64/
 ppc64le-Directory: ppc64le/
 
-Tags: latest, 30
-Architectures: amd64, arm64v8, ppc64le, s390x
-GitFetch: refs/heads/30-updates-candidate
-GitCommit: 5aaf94f96a9716336f7823c2fd3b2608273d277a
+Tags: 27
+Architectures: amd64, arm32v7, arm64v8, ppc64le
+GitFetch: refs/heads/27
+GitCommit: e1796b2753d5a5731de5915661e4639c4342b950
 amd64-Directory: x86_64/
+arm32v7-Directory: armhfp/
 arm64v8-Directory: aarch64/
 ppc64le-Directory: ppc64le/
-s390x-Directory: s390x/
 
 Tags: 28
 Architectures: amd64, arm64v8, ppc64le, s390x, arm32v7
@@ -51,10 +40,30 @@ ppc64le-Directory: ppc64le/
 s390x-Directory: s390x/
 arm32v7-Directory: armhfp/
 
-Tags: rawhide, 31
-Architectures: amd64, arm64v8, ppc64le
-GitFetch: refs/heads/31
-GitCommit: cb2251e0c66c300a0d7b696bb42f86f4e7181898
+Tags: 30
+Architectures: amd64, arm64v8, ppc64le, s390x
+GitFetch: refs/heads/30-updates-candidate
+GitCommit: 14e0023deca67bb8b1be7803949f804f490b7d1a
 amd64-Directory: x86_64/
 arm64v8-Directory: aarch64/
+ppc64le-Directory: ppc64le/
+s390x-Directory: s390x/
+
+Tags: latest, 31
+Architectures: amd64, arm64v8, ppc64le, s390x
+GitFetch: refs/heads/31-updates-candidate
+GitCommit: a531762a988cc17d88aa823350ba64596aadf721
+amd64-Directory: x86_64/
+arm64v8-Directory: aarch64/
+ppc64le-Directory: ppc64le/
+s390x-Directory: s390x/
+
+Tags: rawhide, 32
+Architectures: amd64, arm64v8, ppc64le, s390x
+GitFetch: refs/heads/32
+GitCommit: 0e2f9f74eaac694ba913812d9e1f889e45638a2b
+amd64-Directory: x86_64/
+arm64v8-Directory: aarch64/
+ppc64le-Directory: ppc64le/
+s390x-Directory: s390x/
 ppc64le-Directory: ppc64le/

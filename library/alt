@@ -8,7 +8,7 @@ Constraints: !aufs
 Tags: p9, latest
 Architectures: amd64, i386, arm64v8, ppc64le
 GitFetch: refs/heads/p9
-GitCommit: 9f4e4ef359c3b555458af34084e3d7236dc001e8
+GitCommit: 621b50619ac631c65bdc18859c9e40e8490e5a3c
 amd64-Directory: x86_64/
 i386-Directory: i586/
 arm64v8-Directory: aarch64/
@@ -17,14 +17,14 @@ ppc64le-Directory: ppc64le/
 Tags: p8
 Architectures: amd64, i386
 GitFetch: refs/heads/p8
-GitCommit: cb59c4c01e5791db758805ab64a6522d790dedd4
+GitCommit: 75540ec04f973c8fcbde0efad01d120a643c9613
 amd64-Directory: x86_64/
 i386-Directory: i586/
 
 Tags: sisyphus
 Architectures: amd64, i386, arm64v8, ppc64le
 GitFetch: refs/heads/sisyphus
-GitCommit: 9b79e4b2426ae41d188e838c511eb1097aef21f9
+GitCommit: c63ceac3da30b4472e1547fe31cea4c45a9cf138
 amd64-Directory: x86_64/
 arm64v8-Directory: aarch64/
 i386-Directory: i586/

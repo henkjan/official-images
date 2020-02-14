@@ -1,13 +1,13 @@
-# this file was generated using https://github.com/varnish/docker-varnish/blob/82ba69727be4e78de5a3e07a63e8b62d92ab958d/populate.sh
+# this file was generated using https://github.com/varnish/docker-varnish/blob/a177fa702cf191997094aec9b20951c2012bdc17/populate.sh
 Maintainers: Guillaume Quintard <guillaume@varni.sh> (@gquintard)
 GitRepo: https://github.com/varnish/docker-varnish.git
 
-Tags: 6.2, 6.2.0-1, 6.2.0, 6, latest, fresh
+Tags: 6.3, 6.3.2-1, 6.3.2, 6, latest, fresh
 Architectures: amd64
 Directory: fresh/debian
-GitCommit: 82ba69727be4e78de5a3e07a63e8b62d92ab958d
+GitCommit: a177fa702cf191997094aec9b20951c2012bdc17
 
-Tags: 6.0, 6.0.3-1, 6.0.3, stable
+Tags: 6.0, 6.0.6-1, 6.0.6, stable
 Architectures: amd64
 Directory: stable/debian
-GitCommit: 82ba69727be4e78de5a3e07a63e8b62d92ab958d
+GitCommit: a177fa702cf191997094aec9b20951c2012bdc17
